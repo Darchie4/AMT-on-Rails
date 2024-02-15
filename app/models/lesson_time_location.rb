@@ -1,0 +1,2 @@
+class LessonTimeLocation < ApplicationRecord
+end

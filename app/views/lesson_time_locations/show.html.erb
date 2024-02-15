@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @lesson_time_location %>
+
+<div>
+  <%= link_to "Edit this lesson time location", edit_lesson_time_location_path(@lesson_time_location) %> |
+  <%= link_to "Back to lesson time locations", lesson_time_locations_path %>
+
+  <%= button_to "Destroy this lesson time location", @lesson_time_location, method: :delete %>
+</div>

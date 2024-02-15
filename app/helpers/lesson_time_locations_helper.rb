@@ -1,0 +1,2 @@
+module LessonTimeLocationsHelper
+end

@@ -1,0 +1,57 @@
+<%= form_with(model: lesson) do |form| %>
+  <% if lesson.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+        <% lesson.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :season_start, style: "display: block" %>
+    <%= form.date_field :season_start %>
+  </div>
+
+  <div>
+    <%= form.label :season_end, style: "display: block" %>
+    <%= form.date_field :season_end %>
+  </div>
+
+  <div>
+    <%= form.label :min_age, style: "display: block" %>
+    <%= form.number_field :min_age %>
+  </div>
+
+  <div>
+    <%= form.label :max_age, style: "display: block" %>
+    <%= form.number_field :max_age %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div>
+    <%= form.label :cover_img_path, style: "display: block" %>
+    <%= form.text_field :cover_img_path %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Lesson time locations</h1>
+
+<div id="lesson_time_locations">
+  <% @lesson_time_locations.each do |lesson_time_location| %>
+    <%= render lesson_time_location %>
+    <p>
+      <%= link_to "Show this lesson time location", lesson_time_location %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New lesson time location", new_lesson_time_location_path %>
