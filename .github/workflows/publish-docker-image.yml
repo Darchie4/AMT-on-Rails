@@ -45,7 +45,9 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          secrets: RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}
+          secrets: |
+            - RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}
+            - secret_key_base=${{secrets.MAIN_KEY}}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
