@@ -54,12 +54,6 @@ RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
-#Debugging
-RUN pwd
-RUN ls
-RUN ls "/rails/bin"
-RUN ls "/rails/bin/docker-entrypoint"
-
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
