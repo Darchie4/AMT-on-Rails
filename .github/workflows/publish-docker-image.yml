@@ -46,6 +46,6 @@ jobs:
           context: .
           secrets: RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}
           push: true
-          platforms: linux/arm64
+          platforms: linux/aarch64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
