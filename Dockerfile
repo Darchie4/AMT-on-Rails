@@ -34,6 +34,9 @@ RUN ls
 # Copy application code
 COPY . .
 
+#More Debugging
+RUN ls
+
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
