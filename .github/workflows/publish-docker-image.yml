@@ -14,7 +14,7 @@ env:
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
   build-and-push-image:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: read
       packages: write
@@ -49,6 +49,5 @@ jobs:
           context: .
           secrets: RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}
           push: true
-          platforms: linux/aarch64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
