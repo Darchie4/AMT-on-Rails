@@ -9,6 +9,7 @@ WORKDIR /rails
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY \
   mkdir config \
+  touch config/master.key \
   cat /run/secrets/RAILS_MASTER_KEY >> config/master.key
 
 # Set production environment
