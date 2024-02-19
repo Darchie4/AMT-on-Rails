@@ -8,7 +8,7 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 WORKDIR /rails
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY \
-  mkdir config
+  mkdir config \
   cat /run/secrets/RAILS_MASTER_KEY >> config/master.key
 
 # Set production environment
