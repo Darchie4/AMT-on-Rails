@@ -1062,3 +1062,295 @@ Processing by UsersController#login as HTML
 Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 1649)
 
 
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:31:42 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 105.3ms | Allocations: 4575)
+  Rendered layout layouts/application.html.erb (Duration: 133.6ms | Allocations: 20175)
+Completed 200 OK in 185ms (Views: 138.0ms | ActiveRecord: 0.0ms | Allocations: 21172)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:31:55 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3624)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 19238)
+Completed 200 OK in 116ms (Views: 48.7ms | ActiveRecord: 0.0ms | Allocations: 20235)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:32:32 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3559)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 19156)
+Completed 200 OK in 86ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 20153)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:33:56 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3560)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 19156)
+Completed 200 OK in 110ms (Views: 41.9ms | ActiveRecord: 0.0ms | Allocations: 20155)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:35:17 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.3ms | Allocations: 3540)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 19136)
+Completed 200 OK in 87ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 20135)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:37:01 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3549)
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 19145)
+Completed 200 OK in 118ms (Views: 47.1ms | ActiveRecord: 0.0ms | Allocations: 20145)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:37:12 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3619)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 19215)
+Completed 200 OK in 81ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 20214)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:37:28 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3614)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 19242)
+Completed 200 OK in 108ms (Views: 56.4ms | ActiveRecord: 0.0ms | Allocations: 20238)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:37:37 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3568)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 19168)
+Completed 200 OK in 81ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 20167)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:38:13 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3569)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 19166)
+Completed 200 OK in 94ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 20165)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:38:47 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3548)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 19145)
+Completed 200 OK in 86ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 20144)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:38:56 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3593)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 19220)
+Completed 200 OK in 109ms (Views: 48.3ms | ActiveRecord: 0.0ms | Allocations: 20214)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:39:00 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3234)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4443)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 4694)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2024-02-19 10:39:12 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/users/login"):
+  
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:39:12 +0100
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3227)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4441)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4688)
+
+
+Started GET "/users/login" for 127.0.0.1 at 2024-02-19 10:48:38 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+Completed 404 Not Found in 21ms (ActiveRecord: 11.4ms | Allocations: 3120)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:63:in `set_user'
+Started GET "/login" for 127.0.0.1 at 2024-02-19 10:48:45 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3611)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 19207)
+Completed 200 OK in 84ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 20090)
+
+
+Started GET "/" for 127.0.0.1 at 2024-02-19 10:48:47 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 89)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1505)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 1973)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-02-19 10:48:49 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3252)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4461)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 4709)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-02-19 10:59:50 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3540)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 19115)
+Completed 200 OK in 82ms (Views: 79.6ms | ActiveRecord: 0.0ms | Allocations: 20044)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-02-19 10:59:56 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-02-19 10:59:57 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3257)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4471)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4716)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-02-19 11:00:03 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:00:03 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3242)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4456)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4703)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:02:08 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3539)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 19115)
+Completed 200 OK in 90ms (Views: 40.7ms | ActiveRecord: 0.0ms | Allocations: 20047)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:03:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:04:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-19 11:04:06 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 16881)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 17748)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    48: 
+    49:       <ul class="nav navbar-nav ml-auto">
+    50:         <li class="nav-item">
+    51:           <%= link_to login_path, class: 'nav-link' do %>
+    52:             <span class="fas fa-user"></span> <!--fa = font awesome user icon-->
+    53:           <% end %>
+    54:         </li>
+  
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-02-19 11:05:45 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 95)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 16762)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 17668)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for an instance of #<Class:0x00007ff05d2eb0f8>):
+    48: 
+    49:       <ul class="nav navbar-nav ml-auto">
+    50:         <li class="nav-item">
+    51:           <%= link_to login_path, class: 'nav-link' do %>
+    52:             <span class="fas fa-user"></span> <!--fa = font awesome user icon-->
+    53:           <% end %>
+    54:         </li>
+  
+app/views/layouts/application.html.erb:51
+Started GET "/" for 127.0.0.1 at 2024-02-19 11:06:21 +0100
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 15917)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 16846)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:06:24 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3579)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4791)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 5259)
+
+
+Started POST "/login" for 127.0.0.1 at 2024-02-19 11:06:29 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-02-19 11:06:30 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4474)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 4719)
+
+
