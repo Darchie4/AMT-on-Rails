@@ -48,6 +48,8 @@ jobs:
           secrets: |
             - RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}
             - secret_key_base=${{secrets.MAIN_KEY}}
+          build-args: |
+            "RAILS_MASTER_KEY=${{secrets.MAIN_KEY}}"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
