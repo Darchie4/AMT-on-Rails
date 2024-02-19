@@ -37,4 +37,5 @@
 # IDE files.
 /.idea
 
-#TEST
+/config/credentials/development.yml.enc
+/config/credentials/*.key
