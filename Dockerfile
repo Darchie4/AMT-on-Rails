@@ -4,11 +4,12 @@
 ARG RUBY_VERSION=3.3.0
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
-RUN --mount=type=secret,id=RAILS_MASTER_KEY \
-  cat /run/secrets/RAILS_MASTER_KEY >> config/master.key
-
 # Rails app lives here
 WORKDIR /rails
+
+RUN --mount=type=secret,id=RAILS_MASTER_KEY \
+  mkdir config
+  cat /run/secrets/RAILS_MASTER_KEY >> config/master.key
 
 # Set production environment
 ENV RAILS_ENV="production" \
