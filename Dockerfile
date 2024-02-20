@@ -2,18 +2,19 @@
 
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.0
-ARG SECRET_KEY_BASE
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
 # Rails app lives here
 WORKDIR /rails
+
+RUN --mount=type=secret,id=master_key,dst=/config/master.key \
+  RAILS_ENV=production bin/rails assets:precompile
 
 # Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    SECRET_KEY_BASE="${SECRET_KEY_BASE}"
     
 
 
