@@ -47,7 +47,7 @@ jobs:
           context: .
           secrets: |
              "RAILS_MASTER_KEY=${{secrets.RAILS_MASTER_KEY}}"
-             "SECRET_KEY_BASE=${{secrets.SECRET_KEY_BASE}}"
+             "master_key=${{secrets.SECRET_KEY_BASE}}"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
