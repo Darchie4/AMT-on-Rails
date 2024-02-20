@@ -34,8 +34,9 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-RUN --mount=type=secret,id=master_key,dst=/config/master.key \
-  ./bin/rails assets:precompile
+RUN --mount=type=secret,id=master_key,dst=./config/master.key \
+    SECRET_KEY_BASE=cat ./config/master.key \
+    ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
