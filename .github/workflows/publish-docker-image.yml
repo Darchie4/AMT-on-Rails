@@ -46,7 +46,7 @@ jobs:
         with:
           context: .
           secrets: |
-            - master_key=${{secrets.MAIN_KEY}}
+             "master_key=${{secrets.MAIN_KEY}}"
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
