@@ -8,7 +8,7 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 WORKDIR /rails
 
 RUN --mount=type=secret,id=master_key,dst=/config/master.key \
-  RAILS_ENV=production bin/rails assets:precompile
+  RAILS_ENV=production ./bin/rails assets:precompile
 
 # Set production environment
 ENV RAILS_ENV="production" \
