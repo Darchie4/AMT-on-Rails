@@ -38,3 +38,4 @@
 /.idea
 
 #TEST
+/config/master.key
