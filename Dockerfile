@@ -65,8 +65,8 @@ COPY --from=build /rails /rails
 RUN ls /rails/config
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
-    touch ./config/master.key \
-    cat ./config/master.key.tmp > ./config/master.key \
+    touch ./config/master.key; \
+    cat ./config/master.key.tmp > ./config/master.key; \
     ls ./config
 
 # Run and own only the runtime files as a non-root user for security
