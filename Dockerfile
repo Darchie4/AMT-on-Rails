@@ -43,14 +43,15 @@ RUN bundle exec bootsnap precompile app/ lib/
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY SECRET_KEY_BASE_DUMMY=1
 # RUN ./bin/rails assets:precompile
 
-RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key 
-ENV SECRET_KEY_BASE="$(cat ./secrets/key_base.key)"
+RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key \
+    export SECRET_KEY_BASE=$(cat ./secrets/key_base.key) \
+    echo $RAILS_MASTER_KEY
     
 
-RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key 
-ENV RAILS_MASTER_KEY="$(cat ./config/master.key)"
-RUN ./bin/rails assets:precompile
-
+RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
+    export RAILS_MASTER_KEY=$(cat ./config/master.key) \
+    echo $RAILS_MASTER_KEY \
+   ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
@@ -63,7 +64,6 @@ RUN apt-get update -qq && \
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
-COPY --from=build /rails/config/master.key /rails/config/master.key
 
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
