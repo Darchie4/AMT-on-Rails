@@ -49,6 +49,8 @@ RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key \
     
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
+    RAILS_MASTER_KEY=$(cat ./config/master.key) \
+    echo $(cat ./config/master.key) \
    ./bin/rails assets:precompile
 
 # Final stage for app image
