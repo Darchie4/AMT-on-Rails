@@ -47,6 +47,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 #     export SECRET_KEY_BASE=$(cat ./secrets/key_base.key); \
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
     export RAILS_MASTER_KEY=$(cat ./config/master.key); \ 
+    chmod 0444 ./config/master.key \
     ./bin/rails assets:precompile
 
 # Final stage for app image
@@ -67,6 +68,7 @@ RUN useradd rails --create-home --shell /bin/bash && \
 USER rails:rails
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
+    chmod 0444 ./config/master.key \
     export RAILS_MASTER_KEY=$(cat ./config/master.key)
 
 # Entrypoint prepares the database.
