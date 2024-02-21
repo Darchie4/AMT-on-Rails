@@ -38,7 +38,7 @@ COPY . .
 RUN bundle exec bootsnap precompile app/ lib/
 
 # RUN echo "$RAILS_MASTER_KEY"
-# RUN echo "$RAILS_MASTER_KEY" > /rails/config/master.key
+RUN echo "$RAILS_MASTER_KEY" > /rails/config/master.key
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY SECRET_KEY_BASE_DUMMY=1 
 # RUN ./bin/rails assets:precompile
@@ -46,9 +46,9 @@ RUN bundle exec bootsnap precompile app/ lib/
 # RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key \
 #     SECRET_KEY_BASE=$(cat ./secrets/key_base.key)
 
-RUN touch /rails/config/master.key 
+# RUN touch /rails/config/master.key 
 
-RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=/rails/config/master.key 
+# RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=/rails/config/master.key 
 RUN cat /rails/config/master.key
 RUN ./bin/rails assets:precompile
 
