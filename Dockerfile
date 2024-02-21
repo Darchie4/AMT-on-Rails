@@ -37,17 +37,7 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# RUN echo "$RAILS_MASTER_KEY"
-# RUN echo "$RAILS_MASTER_KEY" > /rails/config/master.key
-
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY SECRET_KEY_BASE_DUMMY=1
-# RUN ./bin/rails assets:precompile
-
-# RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key \
-#     export SECRET_KEY_BASE=$(cat ./secrets/key_base.key); \
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
-    export RAILS_MASTER_KEY=$(cat ./config/master.key); \ 
-    chmod 0444 ./config/master.key; \
     ./bin/rails assets:precompile
 
 # Final stage for app image
@@ -62,19 +52,13 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-RUN ls /rails/config
-
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
-    touch ./config/master.key; \
     cat ./config/master.key.tmp > ./config/master.key; \
-    ls ./config
 
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
-
-RUN ls ./config
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
