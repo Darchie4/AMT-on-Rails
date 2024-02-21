@@ -66,7 +66,8 @@ RUN ls /rails/config
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
     chmod 0444 ./config/master.key; \
-    export RAILS_MASTER_KEY=$(cat ./config/master.key)
+    export RAILS_MASTER_KEY=$(cat ./config/master.key); \
+    ls /rails/config
 
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
