@@ -44,14 +44,10 @@ RUN bundle exec bootsnap precompile app/ lib/
 # RUN ./bin/rails assets:precompile
 
 RUN --mount=type=secret,id=SECRET_KEY_BASE,dst=./secrets/key_base.key \
-    export SECRET_KEY_BASE=$(cat ./secrets/key_base.key) 
-RUN echo $RAILS_MASTER_KEY
-    
-
-RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
-     export RAILS_MASTER_KEY=$(cat ./config/master.key) 
-RUN echo $RAILS_MASTER_KEY 
-RUN ./bin/rails assets:precompile
+    export SECRET_KEY_BASE=$(cat ./secrets/key_base.key); \
+    --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
+    export RAILS_MASTER_KEY=$(cat ./config/master.key); \ 
+    ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
