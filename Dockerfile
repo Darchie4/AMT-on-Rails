@@ -69,9 +69,9 @@ RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
-RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
-    chmod 0444 ./config/master.key; \
-    export RAILS_MASTER_KEY=$(cat ./config/master.key)
+# RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
+#     chmod 0444 ./config/master.key; \
+#     export RAILS_MASTER_KEY=$(cat ./config/master.key)
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
