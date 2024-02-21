@@ -47,6 +47,8 @@ RUN bundle exec bootsnap precompile app/ lib/
 #     SECRET_KEY_BASE=$(cat ./secrets/key_base.key)
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=/rails/config/master.key 
+RUN pwd
+RUN ls /rails/config
 RUN cat /rails/config/master.key
 RUN ./bin/rails assets:precompile
 
