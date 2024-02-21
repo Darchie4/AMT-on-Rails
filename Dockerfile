@@ -64,17 +64,17 @@ COPY --from=build /rails /rails
 
 RUN ls /rails/config
 
-RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
-    chmod 0444 ./config/master.key; \
-    export RAILS_MASTER_KEY=$(cat ./config/master.key); \
-    ls /rails/config
+RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
+    touch ./config/master.key \
+    cat ./config/master.key.tmp > ./config/master.key \
+    ls ./config
 
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
-RUN ls /rails/config
+RUN ls ./config
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
