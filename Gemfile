@@ -47,6 +47,10 @@ gem "bootsnap", require: false
 # Gem that makes the application work with Bootstarp
 gem "cssbundling-rails"
 
+# Gem for working with CSS bundeling jabascript thing
+gem 'webpacker'
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
