@@ -25,16 +25,13 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev gnupg ca-certificates
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs npm
+
+RUN npm install --global yarn
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-RUN apt-get update && apt-get install -y nodejs yarn
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
@@ -53,18 +50,14 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && nodejs npm\
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN npm install --global yarn
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
-
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-RUN apt-get update && apt-get install -y nodejs yarn
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
     cat ./config/master.key.tmp > ./config/master.key
