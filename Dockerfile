@@ -25,7 +25,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs yarn
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev gnupg
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -61,7 +61,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev nodejs yarn && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
