@@ -25,7 +25,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs npm
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs
 
 RUN npm install --global yarn
 
@@ -50,7 +50,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && nodejs npm\
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && nodejs\
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 RUN npm install --global yarn
