@@ -1,7 +1,6 @@
 class CreateUsers < ActiveRecord::Migration[7.1]
   def change
     create_table :users do |t|
-      t.pr
       t.string :first_name
       t.string :last_name
       t.date :birthday
@@ -11,8 +10,6 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :phone
 
       t.timestamps
-
-      add_foreign_key :addresses, :users
     end
   end
 end
