@@ -27,7 +27,7 @@ RUN apt-get update -qq && \
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN yarn install
+RUN yarn install --pure-lockfile
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
@@ -53,7 +53,7 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-RUN yarn install
+RUN yarn install --pure-lockfile
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
     cat ./config/master.key.tmp > ./config/master.key
