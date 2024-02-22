@@ -50,7 +50,7 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && node npm\
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates && nodejs npm\
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 RUN npm install --global yarn
