@@ -47,10 +47,6 @@ RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
 FROM base
 
 # Install packages needed for deployment
-RUN apt-get install -y apt-transport-https ca-certificates
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev nodejs yarn && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
@@ -59,7 +55,7 @@ RUN apt-get update -qq && \
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
 
-RUN yarn --version
+RUN yarn install
 
 RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key.tmp \
     cat ./config/master.key.tmp > ./config/master.key
