@@ -23,7 +23,7 @@ test:
 production:
  adapter: mysql2
  database: amt_app
- username: amt_app
- password: TBD
+ username: <%= Rails.application.secrets[:db][:username]%>
+ password: <%= Rails.application.secrets[:db][:password]%>
  host: mysql
  encoding: utf8
