@@ -25,7 +25,7 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev node npm
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs npm
 
 RUN npm install --global yarn
 
