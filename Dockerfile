@@ -47,6 +47,7 @@ RUN --mount=type=secret,id=RAILS_MASTER_KEY,dst=./config/master.key \
 FROM base
 
 # Install packages needed for deployment
+RUN apt-get install -y apt-transport-https ca-certificates
 RUN curl https://deb.nodesource.com/setup_12.x | bash
 RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
