@@ -12,9 +12,9 @@
 !/.env*.erb
 
 # Ignore all logfiles and tempfiles.
-/log/
+/log/*
 /tmp/*
-!/log/.keep
+!/log/.gitkeep
 !/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
@@ -35,7 +35,7 @@
 # IDE files.
 /.idea
 
-#TEST
+# Don't put the master key in version control
 /config/master.key
 
 /config/credentials/production.key
