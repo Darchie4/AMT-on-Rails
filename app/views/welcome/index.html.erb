@@ -1,6 +1,7 @@
 <h1>Welcome!</h1>
 <% if user_signed_in? %>
   <div> You are signed in with username <%= current_user.email %></div>
+  <p>Your first name is <%=current_user.first_name %></p>
 <% else %>
   <div> You are not signed in. Sign in to see more here: <%= button_to "Log ind", new_user_session_path %></div>
 <% end %>

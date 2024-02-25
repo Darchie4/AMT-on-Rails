@@ -1,5 +1,7 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log ind", new_session_path(resource_name) %><br/>
+  <p class="text-center">Har du allerede en konto?
+  <%= link_to "Log ind", new_session_path(resource_name), class:'text-success' %>
+  </p><br/>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
