@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_25_123007) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_25_125218) do
   create_table "addresses", force: :cascade do |t|
     t.string "country", null: false
     t.string "address", null: false
@@ -21,13 +21,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_123007) do
   end
 
   create_table "instructor_infos", force: :cascade do |t|
-    t.integer "users_id"
+    t.integer "users_id", null: false
     t.string "short_description", null: false
     t.text "long_description", null: false
     t.string "profile_img_path", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_id"], name: "index_instructor_infos_on_users_id"
+  end
+
+  create_table "lesson_instructors", force: :cascade do |t|
+    t.integer "lesson_id", null: false
+    t.integer "instructor_info_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instructor_info_id"], name: "index_lesson_instructors_on_instructor_info_id"
+    t.index ["lesson_id"], name: "index_lesson_instructors_on_lesson_id"
   end
 
   create_table "lesson_time_locations", force: :cascade do |t|
@@ -60,7 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_123007) do
     t.string "name", null: false
     t.string "short_description", null: false
     t.text "long_description", null: false
-    t.integer "address_id"
+    t.integer "address_id", null: false
     t.string "cover_img_path", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,7 +111,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_123007) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.date "birthday", null: false
-    t.integer "addresses_id"
+    t.integer "addresses_id", null: false
     t.string "password", null: false
     t.string "email", null: false
     t.string "phone", null: false
@@ -113,6 +122,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_123007) do
   end
 
   add_foreign_key "instructor_infos", "users", column: "users_id"
+  add_foreign_key "lesson_instructors", "instructor_infos"
+  add_foreign_key "lesson_instructors", "lessons"
   add_foreign_key "lesson_time_locations", "lessons", column: "lessons_id"
   add_foreign_key "lesson_time_locations", "locations", column: "locations_id"
   add_foreign_key "locations", "addresses"
