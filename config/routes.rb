@@ -10,11 +10,14 @@ Rails.application.routes.draw do
 
   #Manual routes (GET)
   get '/about', to: 'about#index', as: 'about'
-  get '/login', to: 'sessions#new', as: 'login'
+  get '/login', to: 'sessions#login', as: 'login'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  post '/logout', to: 'sessions#destroy'
+
 
   #CRUD Routes
-  resources :sessions, only: [:create, :destroy]
-  resources :users #, only: [:create, :edit]
+  devise_for :users
   resources :lessons
 
 end

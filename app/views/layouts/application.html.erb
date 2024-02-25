@@ -41,23 +41,31 @@
           </ul>
         </li>
       </ul>
+      <!--
       <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Search">
         <button class="btn btn-primary" type="button">Search</button>
       </form>
-
+-->
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item">
-          <%= link_to login_path, class: 'nav-link' do %>
-            <span class="fas fa-user"></span> <!--fa = font awesome user icon-->
+          <% if user_signed_in? %>
+            <%= button_to destroy_user_session_path, method: :delete, class: 'nav-link', title:'Log ud' do %>
+              <i class="fas fa-sign-out-alt" style="font-size: larger"></i> <!--fa = font awesome logout icon-->
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class: 'nav-link', title:'Log ind' do %>
+              <i class="fas fa-user" style="font-size: larger"></i> <!--fa = font awesome user icon-->
+            <% end %>
           <% end %>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
 <%= yield %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 </body>
 </html>
 
