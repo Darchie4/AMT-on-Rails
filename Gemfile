@@ -48,9 +48,6 @@ gem "bootsnap", require: false
 gem "cssbundling-rails"
 gem "jsbundling-rails"
 
-# Gem for working with CSS bundeling jabascript thing
-# gem 'webpacker'
-
 gem "sassc-rails"
 
 group :development, :test do
