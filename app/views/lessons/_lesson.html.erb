@@ -1,45 +1,42 @@
-<div class="card" id="<%= dom_id lesson %>">
-  <div>
-    <h1 class="bg-primary text-center"><%= lesson.name %></h1>
-  </div>
-  <div class="d-flex">
-    <div class="col-md-3">
-      <p>
-        <strong>Season start:</strong>
-        <%= lesson.season_start %>
-      </p>
+<div id="<%= dom_id lesson %>">
+  <p>
+    <strong>Name:</strong>
+    <%= lesson.name %>
+  </p>
 
-      <p>
-        <strong>Season end:</strong>
-        <%= lesson.season_end %>
-      </p>
+  <p>
+    <strong>Description:</strong>
+    <%= lesson.description %>
+  </p>
 
-      <p>
-        <strong>Min age:</strong>
-        <%= lesson.min_age %>
-      </p>
+  <p>
+    <strong>Season start:</strong>
+    <%= lesson.season_start %>
+  </p>
 
-      <p>
-        <strong>Max age:</strong>
-        <%= lesson.max_age %>
-      </p>
+  <p>
+    <strong>Season end:</strong>
+    <%= lesson.season_end %>
+  </p>
 
-      <p>
-        <strong>Price:</strong>
-        <%= lesson.price %>
-      </p>
-    </div>
-    <div class="vr mx-4"></div>
-    <div class="col-md-4">
-      <p>
-        <img src="<%= lesson.cover_img_path %>" alt="Her burde være et billede... når det engang kommer til at virke">
-      </p>
-    </div>
-  </div>
-  <%= lesson.description %>
+  <p>
+    <strong>Min age:</strong>
+    <%= lesson.min_age %>
+  </p>
 
+  <p>
+    <strong>Max age:</strong>
+    <%= lesson.max_age %>
+  </p>
 
+  <p>
+    <strong>Price:</strong>
+    <%= lesson.price %>
+  </p>
 
-
+  <p>
+    <strong>Cover img path:</strong>
+    <%= lesson.cover_img_path %>
+  </p>
 
 </div>
