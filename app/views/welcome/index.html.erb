@@ -1,8 +1,7 @@
 <h1>Welcome!</h1>
 <% if user_signed_in? %>
   <div> You are signed in with username <%= current_user.email %></div>
-  <%= button_to "Log ud", destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= button_to "Log ind", new_user_session_path %>
+  <div> You are not signed in. Sign in to see more here: <%= button_to "Log ind", new_user_session_path %></div>
 <% end %>
 <p>Landing page under construction</p>
