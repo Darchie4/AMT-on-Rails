@@ -12,8 +12,8 @@
 !/.env*.erb
 
 # Ignore all logfiles and tempfiles.
-/log/.keep
-/log/*
+
+/log/
 /tmp/*
 !/log/.keep
 !/tmp/.keep
@@ -41,9 +41,19 @@
 
 /config/credentials/production.key
 
+#Precompiled js packs
 /public/packs
 /public/packs-test
+/public/assets
+
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+<<<<<<< HEAD
+=======
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+>>>>>>> b48e3465327524da9daea159d46e7668fd0db308

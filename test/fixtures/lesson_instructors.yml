@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lesson: one
+  instructor_info: one
+
+two:
+  lesson: two
+  instructor_info: two
