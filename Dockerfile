@@ -14,7 +14,9 @@ WORKDIR /rails
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development" 
+    BUNDLE_WITHOUT="development" \
+    NODE_VERSION=20.11.0
+    
     
 
 
@@ -23,10 +25,13 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs yarn
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config default-libmysqlclient-dev nodejs npm
+
+RUN npm install --global yarn
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
+
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
@@ -45,8 +50,10 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev nodejs yarn && \
+    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips default-libmysqlclient-dev gnupg ca-certificates nodejs npm &&\
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN npm install --global yarn
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
