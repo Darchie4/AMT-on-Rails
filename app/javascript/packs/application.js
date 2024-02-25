@@ -1,9 +1,8 @@
-// This is the main entry point for your application
+import Rails from "@rails/ujs"
+import Turbolinks from "turbolinks"
+import * as ActiveStorage from "@rails/activestorage"
+import "channels"
 
-// Import your main application JavaScript file
-import '../src/main.js';
-
-// You can also import other JavaScript modules or files as needed
-// import './otherModule';
-
-// Any additional initialization code or setup can go here
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()

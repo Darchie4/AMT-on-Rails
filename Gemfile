@@ -46,9 +46,10 @@ gem "bootsnap", require: false
 
 # Gem that makes the application work with Bootstarp
 gem "cssbundling-rails"
+gem "jsbundling-rails"
 
 # Gem for working with CSS bundeling jabascript thing
-gem 'webpacker'
+# gem 'webpacker'
 
 gem "sassc-rails"
 
