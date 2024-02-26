@@ -10,6 +10,8 @@ class CreateLessons < ActiveRecord::Migration[7.1]
       t.integer :max_age
       t.decimal :price, null: false
       t.string :cover_img_path, null: false
+      t.references :skill_level, foreign_key: true, null: false
+      t.references :dance_style, foreign_key: true, null: false
 
       t.timestamps
     end

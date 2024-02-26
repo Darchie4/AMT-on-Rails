@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_25_125218) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_26_104220) do
   create_table "addresses", force: :cascade do |t|
     t.string "country", null: false
     t.string "address", null: false
     t.integer "zip_code", null: false
     t.string "city", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dance_styles", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,6 +100,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_25_125218) do
   create_table "roles", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skill_levels", force: :cascade do |t|
+    t.string "display_name"
+    t.integer "sorting_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
